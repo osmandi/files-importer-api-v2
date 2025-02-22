@@ -1,0 +1,22 @@
+NODE endpoint
+DESCRIPTION >
+  Get number of employers by quarter
+
+SQL >
+  WITH base AS (
+    SELECT d.department AS department, j.job AS job, extract(quarter FROM he.datetime) as quarter
+    FROM hired_employees he
+    INNER JOIN departments d ON d.id = he.department_id
+    INNER JOIN jobs j ON j.id = he.job_id
+    WHERE he.datetime between '2021-01-01' and '2021-12-31'
+    )
+    SELECT 
+    	department
+    	,job
+        ,SUM(CASE WHEN quarter = 1 THEN 1 ELSE 0 END) AS Q1
+        ,SUM(CASE WHEN quarter = 2 THEN 1 ELSE 0 END) AS Q2
+        ,SUM(CASE WHEN quarter = 3 THEN 1 ELSE 0 END) AS Q3
+        ,SUM(CASE WHEN quarter = 4 THEN 1 ELSE 0 END) AS Q4
+    FROM base b
+    GROUP BY department, job
+    ORDER BY department, job

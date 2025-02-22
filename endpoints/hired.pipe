@@ -1,0 +1,10 @@
+NODE endpoint
+DESCRIPTION >
+  Get the numbers of employers hired for each department
+
+SQL >
+  SELECT d.id id, d.department, count(1) AS hired
+    FROM hired_employees he
+    INNER JOIN departments d ON d.id = he.department_id
+    WHERE he.datetime between '2021-01-01' and '2021-12-31'
+    GROUP BY d.id, d.department
