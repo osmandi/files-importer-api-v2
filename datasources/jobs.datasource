@@ -1,0 +1,6 @@
+DESCRIPTION >
+    Generated from raw/jobs.csv
+
+SCHEMA >
+    `id` Int16,
+    `job` String

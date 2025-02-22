@@ -1,0 +1,6 @@
+DESCRIPTION >
+    Generated from raw/departments.csv
+
+SCHEMA >
+    `id` Int16,
+    `department` String

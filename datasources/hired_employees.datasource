@@ -1,0 +1,9 @@
+DESCRIPTION >
+    Generated from raw/hired_employees.csv
+
+SCHEMA >
+    `id` Int32,
+    `name` Nullable(String),
+    `datetime` Nullable(DateTime),
+    `department_id` Nullable(Int16),
+    `job_id` Nullable(Int16)
