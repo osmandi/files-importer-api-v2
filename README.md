@@ -9,6 +9,8 @@ A Lambda architecture is used, which allows querying both updated and historical
 
 Finally, the analytics created is shared via a Tableau Public dashboard available at [Hire and Employees](https://public.tableau.com/views/HiredandEmployees/Dashboard1).
 
+![](./images/dashboard_tableau_public.png)
+
 
 ## Usage
 
